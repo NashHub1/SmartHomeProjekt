@@ -1,0 +1,37 @@
+
+a[highlight] {
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #009B91;
+
+    color: antiquewhite;
+}
+
+.header {
+    padding: 5px;
+    background-color: #e6fffd;
+}
+
+.header h1.logo{
+    font-size: 2em;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.h1test{
+    font-weight: bold;
+    /*text-decoration: underline;*/
+    /*background-color: #009B91;*/
+
+    color: black;
+}
+
+.BoxLay{
+    border: 1px solid black;
+    padding: 5% ;
+}
+.buttonsLay2{
+    border: 1px solid black;
+    padding: 5% ;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="100.0" prefWidth="350.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smarthomeapp.MyController">
+
+    <Label fx:id="weatherLabel" prefHeight="17.0" prefWidth="90.0" text="Hallo World" />
+</VBox>
