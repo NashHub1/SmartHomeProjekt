@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 
-<VBox alignment="CENTER" prefHeight="278.0" prefWidth="341.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smarthomeapp.MyController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smarthomeapp.MyController">
    <children>
-      <Circle fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button layoutX="263.0" layoutY="299.0" mnemonicParsing="false" onAction="#changeColor" text="Button" />
+      <Pane fx:id="licht" layoutX="200.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0" styleClass="lichtklasse" stylesheets="@FxStyle.css" />
+      <Button fx:id="check" layoutX="386.0" layoutY="312.0" mnemonicParsing="false" onAction="#changeColorlicht" text="Check Color change" />
    </children>
-</VBox>
+</AnchorPane>

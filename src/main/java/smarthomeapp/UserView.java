@@ -12,27 +12,44 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import javafx.event.*;
+
 
 @Route(value = "", layout = MainLayout.class)
 @PageTitle("Menu")
 @CssImport("./themes/style.css")
 //public class UserView extends Div {
 //public class UserView extends VerticalLayout {
-public class UserView extends Div {
+public class UserView extends Div{
+
+
     public UserView() {
 
-        //Button 1
-        Button button1 = new Button("AN");
-        
+        //Licht1-Button 1
+        Button anSchalter1 = new Button("An");
+        Button ausSchalter1 = new Button("Aus");
+        anSchalter1.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
+        API message = new API();
 
 
         //Feld 1 - Licht 1
-        var box1 = new HorizontalLayout(createH1("Licht 1"),button1);
+        var box1 = new HorizontalLayout(createH1("Licht 1"),anSchalter1);
         box1.setClassName("BoxLay");
         box1.setAlignItems(FlexComponent.Alignment.BASELINE);
         box1.setMargin(true);
 
-        button1.addClickListener(buttonClickEvent -> Notification.show("Geht wohl"));
+
+        anSchalter1.addClickListener(buttonClickEvent -> message.api("an"));
+        anSchalter1.addClickListener(buttonClickEvent -> Notification.show("Geht wohl"));
+
+                ;//Notification.show("Geht wohl"));
+
+
+
+
+
+
 
         // Feld 2 - Licht 2
         var box2 = new HorizontalLayout(createH1("Licht 2"),createButton("AUS"));
