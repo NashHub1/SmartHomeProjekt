@@ -16,7 +16,10 @@ import java.io.IOException;
 public class MyController{
 
     @FXML
-    private Pane licht;
+    private Pane licht1;
+
+    @FXML
+    private Pane licht2;
 
     @FXML
     private Button check;
@@ -25,14 +28,22 @@ public class MyController{
 
     @FXML
     void changeColor(ActionEvent event) {
-        licht.setStyle("-fx-background-color: blue");
+        licht1.setStyle("-fx-background-color: blue");
+        licht2.setStyle("-fx-background-color: blue");
     }
 
     @FXML
     void changeColorlicht(ActionEvent event) {
-        if (API.AnAus.equals("an")){
-            licht.setStyle("-fx-background-color: yellow");
-            System.out.println(API.statuslicht);
+        System.out.println(API.lightvalue1);
+        if (API.lightvalue1){
+            licht1.setStyle("-fx-background-color: yellow");
+
+        } else {
+            licht1.setStyle("-fx-background-color: black");
+        } if (API.lightvalue2){
+            licht2.setStyle("-fx-background-color: yellow");
+        }else {
+            licht2.setStyle("-fx-background-color: black");
         }
 
     }

@@ -9,6 +9,7 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
@@ -25,72 +26,62 @@ public class UserView extends Div{
 
     public UserView() {
 
-        //Licht1-Button 1
-        Button anSchalter1 = new Button("An");
-        Button ausSchalter1 = new Button("Aus");
-        anSchalter1.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-
+        // API für Lichtstatus
         API message = new API();
 
 
-        //Feld 1 - Licht 1
-        var box1 = new HorizontalLayout(createH1("Licht 1"),anSchalter1);
+        //Box 1 Komponenten
+        var ueberschrift1 = new H1("Licht 1");
+        ueberschrift1.setClassName("ueberschrift_licht1");
+        Button Schalter1An = new Button("An");
+        Button Schalter1Aus = new Button("Aus");
+        Schalter1An.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_SUCCESS);
+        Schalter1Aus.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_ERROR);
+
+        //Box 2 Komponenten
+        var ueberschrift2 = new H1("Licht 2");
+        ueberschrift2.setClassName("ueberschrift_licht1");
+        Button Schalter2An = new Button("An");
+        Button Schalter2Aus = new Button("Aus");
+        Schalter2An.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_SUCCESS);
+        Schalter2Aus.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_ERROR);
+
+
+        //Box 1 Layout
+        var schalterBox1 = new HorizontalLayout(Schalter1An,Schalter1Aus);
+        var box1 = new VerticalLayout(ueberschrift1,schalterBox1);
         box1.setClassName("BoxLay");
-        box1.setAlignItems(FlexComponent.Alignment.BASELINE);
         box1.setMargin(true);
-
-
-        anSchalter1.addClickListener(buttonClickEvent -> message.api("an"));
-        anSchalter1.addClickListener(buttonClickEvent -> Notification.show("Geht wohl"));
-
-                ;//Notification.show("Geht wohl"));
-
-
-
+        box1.setAlignItems(FlexComponent.Alignment.CENTER); //Alles in der mitte
+        //Actions-Events der Schalter
+        Schalter1An.addClickListener(buttonClickEvent -> message.api1(true)); //Licht-Wert wird an die API geschickt
+        Schalter1An.addClickListener(buttonClickEvent -> Notification.show("Antrag bestätigt - Licht 1 anschalten"));
+        Schalter1Aus.addClickListener(buttonClickEvent -> message.api1(false));
+        Schalter1Aus.addClickListener(buttonClickEvent -> Notification.show("Antrag bestätigt - Licht 1 ausschalten"));
 
 
 
-
-        // Feld 2 - Licht 2
-        var box2 = new HorizontalLayout(createH1("Licht 2"),createButton("AUS"));
+        //Box 2 Layout
+        var schalterBox2 = new HorizontalLayout(Schalter2An,Schalter2Aus);
+        var box2 = new VerticalLayout(ueberschrift2,schalterBox2);
         box2.setClassName("BoxLay");
-        box2.setAlignItems(FlexComponent.Alignment.BASELINE);
         box2.setMargin(true);
-
-        // Feld 3 - Heizung
-        var box3 = new HorizontalLayout(createH1("Heizung1"),createButton("heizen"));
-        box3.setClassName("BoxLay");
-        box3.setAlignItems(FlexComponent.Alignment.BASELINE);
-        box3.setMargin(true);
-
-
-        // Feld 4 - Raumtemperatur Wohnzimmer
-        var box4 = new HorizontalLayout(createH1("Heizung2"),createButton("heizen"));
-        box4.setClassName("BoxLay");
-        box4.setAlignItems(FlexComponent.Alignment.BASELINE);
-        box4.setMargin(true);
+        box2.setAlignItems(FlexComponent.Alignment.CENTER);
+        //Actions-Events der Schalter
+        Schalter2An.addClickListener(buttonClickEvent -> message.api2(true)); //Licht-Wert wird an die API geschickt
+        Schalter2An.addClickListener(buttonClickEvent -> Notification.show("Antrag bestätigt - Licht 2 anschalten"));
+        Schalter2Aus.addClickListener(buttonClickEvent -> message.api2(false));
+        Schalter2Aus.addClickListener(buttonClickEvent -> Notification.show("Antrag bestätigt - Licht 2 ausschalten"));
 
 
         FormLayout formLayout = new FormLayout();
-        formLayout.add(box1,box2,box3,box4);
+        formLayout.add(box1,box2);
         formLayout.setClassName("BoxLay");
 
 
 
         add(formLayout);
 
-    }
-
-   public H1 createH1(String text) {
-        var uerberschrit_1 = new H1(text);
-        return uerberschrit_1;
-    }
-
-    public Button createButton(String test)
-    {
-        var button = new Button (test);
-        button.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        return button;
     }
 }
 

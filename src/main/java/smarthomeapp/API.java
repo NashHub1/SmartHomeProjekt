@@ -6,21 +6,20 @@ import javafx.event.*;
 public class API {
 
 
-    public static int statuslicht;
-    static  String AnAus;
+
+
+    static boolean lightvalue1;
+    static boolean lightvalue2;
 
     API(){
 
     }
 
-    API(String wert){
-        statuslicht++;
-        this.AnAus = wert;
-
+    public void api1(boolean lightvalue){
+        this.lightvalue1 = lightvalue;
     }
-    public void api(String anauswert){
-        statuslicht++;
-        this.AnAus = anauswert;
+    public void api2(boolean lightvalue){
+        this.lightvalue2 = lightvalue;
     }
 
 }
