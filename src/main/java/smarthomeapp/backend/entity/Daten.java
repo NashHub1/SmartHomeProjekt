@@ -19,6 +19,11 @@ public class Daten{
             michael.setLastName("Stephens");
             michael.setEmail("step@gmx.de");
             contactRepository.save(michael);
+            Contact bi = new Contact();
+            bi.setFirstName("Büsra");
+            bi.setLastName("Altas");
+            bi.setEmail("bi@gmx.de");
+            contactRepository.save(bi);
 
 
         };

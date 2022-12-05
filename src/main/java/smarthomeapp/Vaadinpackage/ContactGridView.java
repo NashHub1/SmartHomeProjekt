@@ -42,12 +42,25 @@ public class ContactGridView extends VerticalLayout {
 
         add(getToolbar(),content);
         updateList();
+        closeEditor();
+        grid.asSingleSelect().addValueChangeListener(event ->
+                editContact(event.getValue()));
+    }
+
+    private void closeEditor() {
+        form.setContact(null);
+        form.setVisible(false);
+        removeClassName("editing");
     }
 
 
     private void configureForm() {
         form = new ContactInputForm();
         form.setWidth("25em");
+
+        form.addListener(ContactInputForm.SaveEvent.class, this::saveContact);
+        form.addListener(ContactInputForm.DeleteEvent.class, this::deleteContact);
+        form.addListener(ContactInputForm.CloseEvent.class, e -> closeEditor());
     }
 
     private void configureGrid(){
@@ -55,6 +68,8 @@ public class ContactGridView extends VerticalLayout {
             grid.setSizeFull();
             grid.setColumns("firstName", "lastName", "email");
             grid.getColumns().forEach(col -> col.setAutoWidth(true));
+
+
 
     }
     private HorizontalLayout getToolbar() {
@@ -66,6 +81,7 @@ public class ContactGridView extends VerticalLayout {
 
 
             Button addContactButton = new Button("Kontakt hinzufügen");
+            addContactButton.addClickListener(click -> addContact());
 
             HorizontalLayout toolbar = new HorizontalLayout(filterText, addContactButton);
             toolbar.addClassName("toolbar");
@@ -75,11 +91,30 @@ public class ContactGridView extends VerticalLayout {
 
         grid.setItems(service.findAllContacts(filterText.getValue()));
     }
+    public void editContact(Contact contact) {
+        if (contact == null) {
+            closeEditor();
+        } else {
+            form.setContact(contact);
+            form.setVisible(true);
+            addClassName("editing");
+        }
+    }
+    void addContact() {
+        grid.asSingleSelect().clear();
+        editContact(new Contact());
+    }
+    private void saveContact(ContactInputForm.SaveEvent event) {
+        service.saveContact(event.getContact());
+        updateList();
+        closeEditor();
+    }
 
-
-
-
-
+    private void deleteContact(ContactInputForm.DeleteEvent event) {
+        service.deleteContact(event.getContact());
+        updateList();
+        closeEditor();
+    }
 
 }
 
