@@ -14,10 +14,13 @@ import com.vaadin.flow.router.Route;
 import smarthomeapp.backend.entity.Contact;
 import smarthomeapp.backend.entity.CrmService;
 
+import javax.annotation.security.PermitAll;
+
 
 //@Route(value="", layout = MainLayout.class)
-@Route("contacts")
+@Route(value = "", layout = MainLayout.class)
 @PageTitle("ContactGridView")
+@PermitAll
 public class ContactGridView extends VerticalLayout {
 
     Grid<Contact> grid = new Grid<>(Contact.class);

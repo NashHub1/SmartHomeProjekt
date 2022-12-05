@@ -13,10 +13,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import javax.annotation.security.PermitAll;
 
-@Route(value = "", layout = MainLayout.class)
+
+@Route(value = "Haussteuerung", layout = MainLayout.class)
 @PageTitle("Menu")
 @CssImport("./themes/style.css")
+@PermitAll
 //public class UserView extends Div {
 //public class UserView extends VerticalLayout {
 public class UserView extends Div{

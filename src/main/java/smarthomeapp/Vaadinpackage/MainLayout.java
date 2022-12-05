@@ -21,12 +21,13 @@ public class MainLayout extends AppLayout {
     }
 
     private void createDrawer() {
-        RouterLink firstLink = new RouterLink("Home Systems", UserView.class);
-        firstLink.setHighlightCondition(HighlightConditions.sameLocation());
+        RouterLink homesystem = new RouterLink("Home Systems", UserView.class);
+        RouterLink kontakte = new RouterLink("ContactGridView", ContactGridView.class);
 
-        addToDrawer(new VerticalLayout(
-           firstLink
-        ));
+        homesystem.setHighlightCondition(HighlightConditions.sameLocation());
+        kontakte.setHighlightCondition(HighlightConditions.sameLocation());
+
+        addToDrawer(new VerticalLayout(kontakte,homesystem));
 
     }
 
