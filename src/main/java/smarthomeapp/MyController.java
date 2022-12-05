@@ -1,15 +1,12 @@
 package smarthomeapp;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
+import smarthomeapp.Vaadinpackage.API;
 
 @Component
 @FxmlView("main-stage.fxml")

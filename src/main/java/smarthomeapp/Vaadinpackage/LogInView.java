@@ -1,4 +1,4 @@
-package smarthomeapp;
+package smarthomeapp.Vaadinpackage;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;

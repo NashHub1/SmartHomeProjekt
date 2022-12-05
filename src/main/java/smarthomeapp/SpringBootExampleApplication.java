@@ -2,6 +2,7 @@ package smarthomeapp;
 
 import javafx.application.Application;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringBootExampleApplication {
@@ -12,4 +13,6 @@ public class SpringBootExampleApplication {
 
         Application.launch(JavaFxApplication.class, args);
     }
+
+
 }

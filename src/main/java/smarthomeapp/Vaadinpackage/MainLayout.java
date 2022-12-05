@@ -1,4 +1,4 @@
-package smarthomeapp;
+package smarthomeapp.Vaadinpackage;
 
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;

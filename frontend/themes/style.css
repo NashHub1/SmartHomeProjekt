@@ -39,3 +39,14 @@ a[highlight] {
 .ueberschrift_licht1{
     color: blue;
 }
+
+.list-view-contacts .content {
+    display: flex;
+}
+
+.list-view-contacts .contact-grid{
+    flex:2;
+}
+.list-view-contacts .ContactInputForm{
+    flex:1;
+}

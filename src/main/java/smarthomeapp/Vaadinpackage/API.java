@@ -1,4 +1,4 @@
-package smarthomeapp;
+package smarthomeapp.Vaadinpackage;
 
 import javafx.scene.control.Button;
 import javafx.event.*;
@@ -8,8 +8,8 @@ public class API {
 
 
 
-    static boolean lightvalue1;
-    static boolean lightvalue2;
+    public static boolean lightvalue1;
+    public static boolean lightvalue2;
 
     API(){
 
