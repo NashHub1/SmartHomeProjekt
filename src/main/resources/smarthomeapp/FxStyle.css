@@ -1,3 +1,57 @@
 .lichtklasse{
     -fx-background-color: #009B91 ;
 }
+.sidebarItem
+{
+    -fx-background-color:  #009B91;
+    -fx-background-radius: 0 20 20 0;
+}
+.sidebarItem:hover
+{
+    -fx-background-color: #acd2cf ;
+    -fx-border-color: #009B91;
+    -fx-border-width: 0px 0px 0px 5px;
+}
+.sidebarItem:pressed
+{
+    -fx-background-color: #009B91 ;
+}
+/* Seitenknöpfe nicht gedrückt */
+.sidebarItemNon
+{
+    -fx-background-color:   #D0DAF5;
+    -fx-background-radius: 0 20 20 0;
+}
+.sidebarItemNon:hover
+{
+    -fx-background-color: #acd2cf ;
+    -fx-border-color: #009B91;
+    -fx-border-width: 0px 0px 0px 5px;
+}
+.sidebarItemNon:pressed
+{
+    -fx-background-color: #009B91 ;
+}
+
+.obereleiste{
+    -fx-background-color: linear-gradient(to bottom right,#334152,#aac5d4);
+}
+
+.sidebarItemleft{
+
+    -fx-background-color:  #334152;
+    -fx-background-radius: 0 0 30 0;
+}
+
+.beleuchtungPane{
+    -fx-opacity: 0.6;
+    -fx-background-color:  #334152;
+}
+
+.lampefuss {
+    -fx-background-color:  #334152;
+}
+.lampe {
+    -fx-background-color:  #334152;
+    -fx-background-radius: 90;
+}

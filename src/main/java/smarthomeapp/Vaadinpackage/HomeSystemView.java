@@ -20,12 +20,12 @@ import javax.annotation.security.PermitAll;
 @PageTitle("Menu")
 @CssImport("./themes/style.css")
 @PermitAll
-//public class UserView extends Div {
-//public class UserView extends VerticalLayout {
-public class UserView extends Div{
+//public class HomeSystemView extends Div {
+//public class HomeSystemView extends VerticalLayout {
+public class HomeSystemView extends Div{
 
 
-    public UserView() {
+    public HomeSystemView() {
 
         // API für Lichtstatus
         API message = new API();
@@ -77,7 +77,7 @@ public class UserView extends Div{
 
         FormLayout formLayout = new FormLayout();
         formLayout.add(box1,box2);
-        formLayout.setClassName("BoxLay");
+        formLayout.setClassName("außenBox");
 
 
 

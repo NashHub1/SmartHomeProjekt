@@ -5,9 +5,6 @@ import javafx.event.*;
 
 public class API {
 
-
-
-
     public static boolean lightvalue1;
     public static boolean lightvalue2;
 

@@ -21,7 +21,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void createDrawer() {
-        RouterLink homesystem = new RouterLink("Home Systems", UserView.class);
+        RouterLink homesystem = new RouterLink("Home Systems", HomeSystemView.class);
         RouterLink kontakte = new RouterLink("ContactGridView", ContactGridView.class);
 
         homesystem.setHighlightCondition(HighlightConditions.sameLocation());
