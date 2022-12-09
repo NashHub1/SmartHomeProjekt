@@ -22,7 +22,7 @@ public class MainLayout extends AppLayout {
 
     private void createDrawer() {
         RouterLink homesystem = new RouterLink("Home Systems", HomeSystemView.class);
-        RouterLink kontakte = new RouterLink("ContactGridView", ContactGridView.class);
+        RouterLink kontakte = new RouterLink("Kontakte", ContactGridView.class);
 
         homesystem.setHighlightCondition(HighlightConditions.sameLocation());
         kontakte.setHighlightCondition(HighlightConditions.sameLocation());

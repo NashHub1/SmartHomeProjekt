@@ -25,8 +25,12 @@ a[highlight] {
 }
 
 .BoxLay{
-    border: 1px solid black;
+    border: 1px solid;
+    border-color: #334152;
     padding: 5% ;
+    border-radius: 30px;
+    box-shadow: 2px 3px 2px #334152 inset;
+    //box-shadow: 1px 1px;
 }
 .buttonsLay2{
     border: 1px solid black;
