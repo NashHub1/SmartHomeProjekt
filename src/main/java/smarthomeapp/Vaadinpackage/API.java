@@ -3,6 +3,7 @@ package smarthomeapp.Vaadinpackage;
 import javafx.scene.control.Button;
 import javafx.event.*;
 
+//Hier wird der Lichtstatus abgespeichert
 public class API {
 
     public static boolean lightvalue1;

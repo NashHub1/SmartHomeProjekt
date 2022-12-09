@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.List;
 
+//Code wurde vom Tutorial entnommen https://vaadin.com/docs/latest/tutorial/database-access
+
 @Service
 public class CrmService {
 

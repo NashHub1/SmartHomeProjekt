@@ -6,6 +6,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+//Code wurde vom Tutorial entnommen https://vaadin.com/docs/latest/tutorial/database-access
 public interface ContactRepository extends JpaRepository<Contact, Integer> {
 //Der SearchTerm wird als ein Parameter genommen.
     //Wir benutzen dann die Query um dann den Inhalt zu suchen, dabei werden große Buchstaben verkleinert

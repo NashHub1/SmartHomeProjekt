@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.UUID;
 
+//Code wurde vom Tutorial entnommen https://vaadin.com/docs/latest/tutorial/database-access
 @MappedSuperclass
 public abstract class AbstractEntity {
 

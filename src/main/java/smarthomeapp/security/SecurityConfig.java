@@ -18,6 +18,8 @@ import java.util.Collections;
 
 @EnableWebSecurity
 @Configuration
+
+//VaadinWebSecurity(neu) hat leider nicht funktioniert, weshalb wir auf die veraltete Version gegriffen haben - VaadinWebSecurityConfigurerAdapter
 public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
 
     @Override
@@ -25,7 +27,7 @@ public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
         super.configure(http);
         setLoginView(http, LogInView.class);
     }
-
+    //Routes werden ausgeblendet und nur /login rout ist sichtbar
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/images/**");
@@ -34,34 +36,10 @@ public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
     @Bean
     @Override
     public UserDetailsService userDetailsService(){
-        return new InMemoryUserDetailsManager(User.withUsername("nash")
-                .password("{noop}user")
+        return new InMemoryUserDetailsManager(User.withUsername("htwg")
+                .password("{noop}htwg")
                 .roles("USER").build());
     }
 
 
 }
-
-
-
-
-// funktioniert nur mit extends VaadinWebSecurityConfigurerAdapter
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        super.configure(http);
-//        setLoginView(http, LogInView.class);
-//    }
-//
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers("/images/**");
-//        super.configure(web);
-//    }
-//
-//    @Bean
-//    @Override
-//    protected UserDetailsService userDetailsService(){
-//        return new InMemoryUserDetailsManager(User.withUsername("nash")
-//                .password("{noop}user")
-//                .roles("USER").build());
-//    }

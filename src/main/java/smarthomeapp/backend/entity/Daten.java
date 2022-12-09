@@ -6,7 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
 
-
+//Hier können die Daten eingetragen werden für die Kontanktliste
 @SpringComponent
 public class Daten{
 
